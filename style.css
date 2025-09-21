@@ -1,10 +1,10 @@
 body {
     display: grid;
     grid-template-areas:
-        "header header"
-        "sidebar main"
-        "footer footer";
-    grid-template-columns: 200px 1fr;
+        "header header header"
+        "left main right"
+        "footer footer footer";
+    grid-template-columns: 200px 1fr 200px; /* left, main, right */
     grid-template-rows: auto 1fr auto;
     height: 100vh;
     margin: 0;
@@ -20,16 +20,25 @@ header {
     padding: 1rem;
 }
 
-/* Sidebar */
-aside {
-    grid-area: sidebar;
+/* Left Sidebar */
+.left-sidebar {
+    grid-area: left;
     background: #f0f0f0;
     text-align: center;
     padding: 1rem;
     border-right: 2px solid #ccc;
 }
 
-/* Main content */
+/* Right Sidebar */
+.right-sidebar {
+    grid-area: right;
+    background: #f0f0f0;
+    text-align: center;
+    padding: 1rem;
+    border-left: 2px solid #ccc;
+}
+
+/* Main Content */
 main {
     grid-area: main;
     padding: 1.5rem;
